@@ -1,0 +1,123 @@
+:root {
+    --main: #000000;
+    --second: #3D0000;
+    --third: #950101;
+    --contrast: #FF0000;
+}
+
+header {
+    min-width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+    align-items: center;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    color: var(--contrast);
+    background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23220000' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23440000' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23660000' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23880000' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23A00' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+section {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+aside {
+    width: 40em;
+    text-align: center;
+    background-color: transparent;
+    color: var(--main);
+    font-size: 1.2em;
+    font-weight: 100;
+    font-style: italic;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: var(--contrast);
+}
+
+button {
+    aspect-ratio: 1/.3;
+    width: 10em;
+    cursor: pointer;
+    font-size: 1.01em;
+    font-weight: 500;
+    border: .5em solid var(--second);
+    border-radius: 1em;
+    color: var(--main);
+    background-color: var(--contrast);
+    margin: 1em 1em 0 1em;
+}
+
+img {
+    aspect-ratio: 1/1;
+    width: 5em;
+    margin: 1em;
+}
+
+footer {
+    min-width: 92vw;
+    color: var(--main);
+    font-size: 1.2em;
+    border: none;
+    padding: .2em .5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+footer > a > img {
+    width: 3.5em;
+    margin: 0 0 0 .5em;
+}
+
+#repository {
+    aspect-ratio: 16/9;
+    width: 40em;
+    border: solid var(--second);
+    border-radius: 1em;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#benefits {
+    width: 40em;
+    margin: .75em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#benefits > h4 {
+    aspect-ratio: 1/.2;
+    width: 13em;
+    background-color: var(--main);
+    border: none;
+    border-radius: 1em;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
