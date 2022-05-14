@@ -52,19 +52,6 @@ a:link, a:visited {
     color: var(--contrast);
 }
 
-button {
-    aspect-ratio: 1/.3;
-    width: 10em;
-    cursor: pointer;
-    font-size: 1.01em;
-    font-weight: 500;
-    border: .5em solid var(--second);
-    border-radius: 1em;
-    color: var(--main);
-    background-color: var(--contrast);
-    margin: 1em 1em 0 1em;
-}
-
 img {
     aspect-ratio: 1/1;
     width: 5em;
@@ -72,7 +59,7 @@ img {
 }
 
 footer {
-    min-width: 92vw;
+    min-width: 90vw;
     color: var(--main);
     font-size: 1.2em;
     border: none;
@@ -88,6 +75,12 @@ footer > a > img {
     margin: 0 0 0 .5em;
 }
 
+.pointers:link,
+.pointers:visited {
+    font-weight: 600;
+    color: var(--main);
+}
+
 #repository {
     aspect-ratio: 16/9;
     width: 40em;
@@ -95,11 +88,57 @@ footer > a > img {
     border-radius: 1em;
 }
 
+#kallaway {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#links {
+    display: grid;
+    place-items: center;
+}
+
 #buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+
+#buttons > label {
+    aspect-ratio: 1/.3;
+    width: 10em;
+    background-color: var(--contrast);
+    border: .5em solid var(--second);
+    border-radius: 1em;
+    color: var(--main);
+    font-size: 1.01em;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 1em 1em 0 1em;
+    display: grid;
+    place-items: center;
+}
+
+#kallaway:target {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#kallaway:target #cromega {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#cromega:target {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#cromega:target #kallaway {
+    opacity: 0;
+    pointer-events: none;
 }
 
 #benefits {
