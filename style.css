@@ -44,11 +44,8 @@ aside {
     align-items: center;
 }
 
-a {
-    text-decoration: none;
-}
-
 a:link, a:visited {
+    text-decoration: none;
     color: var(--contrast);
 }
 
@@ -75,70 +72,78 @@ footer > a > img {
     margin: 0 0 0 .5em;
 }
 
-.pointers:link,
-.pointers:visited {
-    font-weight: 600;
-    color: var(--main);
-}
-
-#repository {
+.repository {
     aspect-ratio: 16/9;
     width: 40em;
     border: solid var(--second);
     border-radius: 1em;
 }
 
-#kallaway {
-    position: absolute;
+#switch {
+    position: relative;
+    display: inline;
+    width: 13em;
+    height: 3em;
+}
+
+input {
     opacity: 0;
-    pointer-events: none;
+}
+
+input:checked + #slider {
+    background-color: var(--contrast);
+    box-shadow: 0 0 1em 0 var(--main);
+}
+
+input:checked + #slider::before {
+    content: "Kallaway Repository";
+    color: var(--contrast);
+    background-color: var(--main);
+    transform: translateX(5em);
+}
+
+#slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--main);
+    box-shadow: 0 0 1em 0 var(--third);
+    border-radius: 1em;
+    transition: 500ms;
+}
+
+#slider::before {
+    position: absolute;
+    content: "Cromega Repository";
+    text-align: center;
+    color: var(--main);
+    height: 3em;
+    width: 8em;
+    background-color: var(--contrast);
+    border-radius: 1em;
+    transition: 500ms;
+    display: grid;
+    place-content: center;
+}
+
+#cromega > img {
+    content: url("imgs/100_Days_of_Code.png");
 }
 
 #links {
-    display: grid;
+    display: inline-block;
     place-items: center;
 }
 
-#buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+#cromega {
+    z-index: 1;
 }
 
-#buttons > label {
-    aspect-ratio: 1/.3;
-    width: 10em;
-    background-color: var(--contrast);
-    border: .5em solid var(--second);
-    border-radius: 1em;
-    color: var(--main);
-    font-size: 1.01em;
-    font-weight: 500;
-    cursor: pointer;
-    margin: 1em 1em 0 1em;
-    display: grid;
-    place-items: center;
-}
-
-#kallaway:target {
-    opacity: 1;
-    pointer-events: all;
-}
-
-#kallaway:target #cromega {
-    opacity: 0;
-    pointer-events: none;
-}
-
-#cromega:target {
-    opacity: 1;
-    pointer-events: all;
-}
-
-#cromega:target #kallaway {
-    opacity: 0;
-    pointer-events: none;
+#kallaway {
+    position: absolute;
 }
 
 #benefits {
