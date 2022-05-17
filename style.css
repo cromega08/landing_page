@@ -5,6 +5,10 @@
     --contrast: #FF0000;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 header {
     min-width: 100vw;
     display: flex;
@@ -14,6 +18,7 @@ header {
 }
 
 body {
+    overflow-x: hidden;
     min-height: 100vh;
     min-width: 100vw;
     color: var(--contrast);
@@ -32,7 +37,7 @@ section {
 }
 
 aside {
-    width: 40em;
+    width: 80vw;
     text-align: center;
     background-color: transparent;
     color: var(--main);
@@ -56,11 +61,10 @@ img {
 }
 
 footer {
-    min-width: 90vw;
+    width: 92.5vw;
     color: var(--main);
     font-size: 1.2em;
     border: none;
-    padding: .2em .5em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -74,17 +78,17 @@ footer > a > img {
 
 .repository {
     aspect-ratio: 16/9;
-    width: 40em;
+    width: 80vw;
     border: solid var(--second);
     border-radius: 1em;
 }
 
-#switch {
+/* #switch {
     position: relative;
     display: inline;
     width: 13em;
     height: 3em;
-}
+} 
 
 input {
     opacity: 0;
@@ -131,7 +135,7 @@ input:checked + #slider::before {
 
 #cromega > img {
     content: url("imgs/100_Days_of_Code.png");
-}
+} */
 
 #links {
     display: inline-block;
@@ -141,27 +145,113 @@ input:checked + #slider::before {
 #cromega {
     z-index: 1;
 }
-
+/* 
 #kallaway {
     position: absolute;
-}
+} */
 
 #benefits {
-    width: 40em;
+    width: 80vw;
     margin: .75em;
+    color: var(--contrast);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
 }
 
-#benefits > h4 {
+h4 {
     aspect-ratio: 1/.2;
-    width: 13em;
+    height: 3em;
+    width: 10em;
     background-color: var(--main);
     border: none;
     border-radius: 1em;
     display: grid;
     justify-content: center;
     align-content: center;
+}
+
+@media (orientation: landscape) {
+    
+    header {
+        margin: 0;
+        width: 100vw;
+        font-size: 1.25em;
+        text-align: center;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+    header > a > img {
+        aspect-ratio: 1/1;
+        margin: 0;        
+    }
+    
+    #body {
+        margin: 0;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+    }
+
+    aside {
+        width: 40vw;
+        height: 35vh;
+    }
+
+    img {
+        width: 7.5em;
+    }
+
+    article {
+        width: 40vw;
+        height: 30vh;
+        text-align: center;
+    }
+
+    p {
+        height: 25vh;
+        padding: 0 1.5em;
+    }
+
+    footer {
+        font-size: 1.5em;
+    }
+
+    footer > p {
+        height: 1.5em;
+    }
+
+    footer > a > img {
+        width: 5em;
+    }
+
+    .repository {
+        width: 42.5vw;
+    }
+    
+    #benefits {
+        height: 15vh;
+        width: 35vw;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-items: center;
+        align-items: flex-end;
+        position: relative;
+    }
+
+    #benefits > h4 {
+        height: 5.5vh;
+        width: 16vw;
+        font-size: 1.1em;
+    }
+
+    #benefits > h4:first-child {
+        position: absolute;
+        bottom: 6vh;
+        left: 10vw;
+    }
 }
